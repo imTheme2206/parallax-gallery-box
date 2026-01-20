@@ -114,13 +114,11 @@ export const ParallaxImageComponent = ({
         draggable={false}
         alt={alt || "Gallery image"}
         onLoad={() => setLoaded(true)}
-        className={`
-          w-full h-full object-cover absolute inset-0
-          will-change-transform
-          transition-[filter,opacity] duration-500 ease-out
-          ${loaded ? "opacity-100" : "opacity-0"}
-        `}
-        style={{ transform: "scale(1.15)" }}
+        className="w-full h-full object-cover absolute inset-0 will-change-transform transition-[filter,opacity] duration-500 ease-out"
+        style={{ 
+          transform: "scale(1.15)",
+          opacity: loaded ? 1 : 0,
+        }}
         src={src}
       />
     </div>
